@@ -42,7 +42,7 @@ VIRTUAL_ENV = 'venv' }
                 }
             }
         }
-        stage('Security Scan' {
+        stage('Security Scan') {
             steps {
                 script {
                     bat "${VIRTUAL_ENV}\\Scripts\\activate && bandit -r . --exclude tests/ --format html -o bandit-report.html"
@@ -57,7 +57,7 @@ VIRTUAL_ENV = 'venv' }
                     echo 'Security scan failed. Check the Bandit report for details.'
                 }
             }
-        })
+        }
         stage('Deploy') {
             steps {
                 script {
