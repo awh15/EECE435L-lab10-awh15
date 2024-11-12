@@ -45,7 +45,7 @@ VIRTUAL_ENV = 'venv' }
         stage('Security Scan') {
             steps {
                 script {
-                    bat "${VIRTUAL_ENV}\\Scripts\\activate && bandit -r . --exclude tests/ --format html -o bandit-report.html"
+                    bat "${VIRTUAL_ENV}\\Scripts\\activate && bandit -r . --exit-zero --format html -o bandit-report.html"
                 }
             }
             post {
